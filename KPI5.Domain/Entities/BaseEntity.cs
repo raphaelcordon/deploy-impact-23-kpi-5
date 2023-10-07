@@ -5,6 +5,6 @@ namespace KPI5.Domain.Entities;
 
 public class BaseEntity : BaseModel
 {
-    [Postgrest.Attributes.PrimaryKey("Id")]
-    public int Id { get; set; }
+    [Postgrest.Attributes.PrimaryKey("id")]
+    public Guid id { get; set; }
 }

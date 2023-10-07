@@ -2,7 +2,7 @@ namespace KPI5.Domain.Contracts;
 
 public class KpiResponse
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string? Circle { get; set; }
 
     public string? Kpi { get; set; }

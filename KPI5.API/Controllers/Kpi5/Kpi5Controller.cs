@@ -29,7 +29,7 @@ public class Kpi5Controller : ControllerBase
         foreach (var item in kpis)
         {
             var tempKpi = new KpiResponse();
-            tempKpi.Id = item.Id;
+            tempKpi.Id = item.id;
             tempKpi.Circle = item.Circle;
             tempKpi.Circle = item.Kpi;
             tempKpi.Range = item.Range;
@@ -43,11 +43,11 @@ public class Kpi5Controller : ControllerBase
         return Ok(kpiResponse);
     }
 
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> Get(int id)
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> Get(Guid id)
     {
         var response = await _client.From<Domain.Entities.KPI5.Kpi5>()
-            .Where(n => n.Id == id)
+            .Where(n => n.id == id)
             .Get();
 
         var kpi = response.Models.FirstOrDefault();
@@ -58,7 +58,7 @@ public class Kpi5Controller : ControllerBase
 
         var kpiResponse = new KpiResponse
         {
-            Id = kpi.Id,
+            Id = kpi.id,
             Circle = kpi.Circle,
             Kpi = kpi.Circle,
             Range = kpi.Range,
@@ -85,14 +85,14 @@ public class Kpi5Controller : ControllerBase
         var response = await _client.From<Domain.Entities.KPI5.Kpi5>().Insert(kpi);
         var newKpi = response.Models.First();
 
-        return Ok(newKpi.Id);
+        return Ok(newKpi.id);
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<IActionResult> Update(int id, [FromBody] KpiResponse model)
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Update(Guid id, [FromBody] KpiResponse model)
     {
         var response = await _client.From<Domain.Entities.KPI5.Kpi5>()
-            .Where(n => n.Id == id)
+            .Where(n => n.id == id)
             .Single();
         
         if (response is null)
@@ -112,11 +112,11 @@ public class Kpi5Controller : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id)
     {
         var response = _client.From<Domain.Entities.KPI5.Kpi5>()
-            .Where(x => x.Id == id)
+            .Where(x => x.id == id)
             .Delete();
         
         return Ok(response.Id);
