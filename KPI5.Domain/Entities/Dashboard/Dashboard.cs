@@ -6,7 +6,7 @@ namespace KPI5.Domain.Entities.Dashboard;
 public class Dashboard : BaseEntity
 {
     [Column("CircleId")]
-    public Circle.Circle? CircleId { get; set; }
+    public Guid? CircleId { get; set; }
     
     [Column("Title")]
     public string? Title { get; set; }
@@ -18,11 +18,11 @@ public class Dashboard : BaseEntity
     public string? VisualisationType { get; set; }
     
     [Column("KpiId")]
-    public Kpi.Kpi? KpiId { get; set; }
+    public Guid? KpiId { get; set; }
     
     [Column("Field")]
     public string? Field { get; set; }
     
     [Column("TemplateId")]
-    public DashboardTemplate? TemplateId { get; set; }
+    public Guid? TemplateId { get; set; }
 }

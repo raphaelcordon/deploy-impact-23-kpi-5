@@ -3,11 +3,11 @@ using Postgrest.Attributes;
 namespace KPI5.Domain.Entities.User;
 
 [Table("Role")]
-public class Role : BaseEntity
+public class UserRole : BaseEntity
 {
     [Column("RoleName")]
     public string? RoleName { get; set; } 
     
     [Column("PermissionId")]
-    public Permission? PermissionId { get; set; }    
+    public UserPermission? PermissionId { get; set; }    
 }

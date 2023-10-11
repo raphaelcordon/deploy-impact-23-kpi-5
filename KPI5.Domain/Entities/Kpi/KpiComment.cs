@@ -3,7 +3,7 @@ using Postgrest.Attributes;
 namespace KPI5.Domain.Entities.Kpi;
 
 [Table("Comment")]
-public class Comment : BaseEntity
+public class KpiComment : BaseEntity
 {
     [Column("KpiId")]
     public Kpi? KpiId { get; set; }

@@ -1,5 +1,4 @@
 using KPI5.Domain.Contracts.User;
-using KPI5.Domain.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KPI5.API.Controllers.User;

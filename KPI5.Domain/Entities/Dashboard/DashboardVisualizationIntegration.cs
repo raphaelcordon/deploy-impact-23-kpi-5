@@ -3,7 +3,7 @@ using Postgrest.Attributes;
 namespace KPI5.Domain.Entities.Dashboard;
 
 [Table("VisualizationIntegration")]
-public class VisualizationIntegration : BaseEntity
+public class DashboardVisualizationIntegration : BaseEntity
 {
     [Column("DashboardId")]
     public Dashboard? DashboardId { get; set; }

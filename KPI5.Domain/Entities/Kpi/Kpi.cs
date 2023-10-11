@@ -6,7 +6,7 @@ namespace KPI5.Domain.Entities.Kpi;
 public class Kpi : BaseEntity
 {
     [Column("CircleId")]
-    public Circle.Circle? CircleId { get; set; }
+    public Guid CircleId { get; set; }
     
     [Column("Name")]
     public string? Name { get; set; }
@@ -17,6 +17,12 @@ public class Kpi : BaseEntity
     [Column("ValueType")]
     public string? ValueType { get; set; }
     
-    [Column("CategoryId")]
-    public KpiCategory? CategoryId { get; set; }
+    [Column("Range")]
+    public string? Range { get; set; }
+    
+    [Column("Periodicity")]
+    public string? Periodicity { get; set; }
+    
+    [Column("Field")]
+    public string? Field { get; set; }
 }

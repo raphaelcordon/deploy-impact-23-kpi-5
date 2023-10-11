@@ -3,7 +3,7 @@ using Postgrest.Attributes;
 namespace KPI5.Domain.Entities.Kpi;
 
 [Table("SystemMetrics")]
-public class SystemMetrics : BaseEntity
+public class KpiSystemMetrics : BaseEntity
 {
     [Column("MetricName")]
     public string? MetricName { get; set; }

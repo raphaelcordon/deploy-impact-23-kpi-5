@@ -6,5 +6,5 @@ public class RoleResponse
 {
     public Guid id { get; set; }
     public string? RoleName { get; set; } 
-    public Permission? PermissionId { get; set; }    
+    public UserPermission? PermissionId { get; set; }    
 }

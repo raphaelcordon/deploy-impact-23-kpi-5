@@ -1,4 +1,3 @@
-using KPI5.Domain.Entities.KPI5;
 using Postgrest.Attributes;
 
 namespace KPI5.Domain.Entities.Kpi;

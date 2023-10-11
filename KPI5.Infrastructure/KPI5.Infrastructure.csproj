@@ -27,7 +27,15 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="Data\" />
+      <Compile Remove="Data\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Remove="Data\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="Data\**" />
     </ItemGroup>
 
 </Project>

@@ -18,7 +18,7 @@ public class UserResponse
 
     public string? Field { get; set; }
 
-    public Role? RoleId { get; set; }
+    public UserRole? RoleId { get; set; }
 
     public Entities.Circle.Circle? CircleId { get; set; }
 }

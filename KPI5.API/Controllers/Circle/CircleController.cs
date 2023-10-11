@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KPI5.API.Controllers.Circle;
 
 [ApiController]
-[Route("[controller]")]
+[Route("v1/[controller]")]
 public class CircleController : ControllerBase
 {
     private readonly Supabase.Client _client;
@@ -56,47 +56,6 @@ public class CircleController : ControllerBase
             Name = dbResponse.Name
         };
         return Ok(getResponse);
-    }
-    
-    [HttpPost]
-    public async Task<IActionResult> Add([FromBody] CircleRequest create)
-    {
-        var dbRequest = new Domain.Entities.Circle.Circle
-        {
-            Name = create.Name
-        };
-        var response = await _client.From<Domain.Entities.Circle.Circle>().Insert(dbRequest);
-        var newRequest = response.Models.First();
-
-        return Ok(newRequest.id);
-    }
-    
-    [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] CircleResponse model)
-    {
-        var response = await _client.From<Domain.Entities.Circle.Circle>()
-            .Where(n => n.id == id)
-            .Single();
-        
-        if (response is null)
-        {
-            return NotFound();
-        }
-
-        response.Name = model.Name;
-
-        await _client.From<Domain.Entities.Circle.Circle>().Update(response);
-        return Ok(response.id);
-    }
-
-    [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Delete(Guid id)
-    {
-        var response = _client.From<Domain.Entities.Circle.Circle>()
-            .Where(x => x.id == id)
-            .Delete();
-        
-        return Ok();
     }
 }
 

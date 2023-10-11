@@ -24,7 +24,7 @@ public class User : BaseEntity
     public string? Field { get; set; }
     
     [Column("RoleId")]
-    public Role? RoleId { get; set; }
+    public UserRole? RoleId { get; set; }
     
     [Column("CircleId")]
     public Circle.Circle? CircleId { get; set; }
